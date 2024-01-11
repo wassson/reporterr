@@ -1,0 +1,2 @@
+web: bin/rails s
+css: bin/rails app:tailwind_engine_watch
