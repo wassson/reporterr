@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+class <%= class_name %>Subscriber
+  def report(error, handled:, severity:, context:, source: nil)
+    ctx = ReportErr::ContextBuilder.build(context)
+    <%= class_name %>.create!(error:, severity:, context: ctx)
+  end
+end
+
+Rails.error.subscribe(<%= class_name %>Subscriber.new)
