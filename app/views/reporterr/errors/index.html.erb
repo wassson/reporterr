@@ -1,24 +1,25 @@
 <div class="w-screen h-screen font-lato">
-  <nav class="flex items-center gap-x-1.5 p-2 border-b border-neutral-100">
-    <button class="hidden whitespace-nowrap rounded-lg bg-slate-900 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-200 lg:block">All errors</button>
-    <button class="hidden whitespace-nowrap rounded-lg bg-slate-100 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-700 lg:block">BaseError</button>
-    <button class="hidden whitespace-nowrap rounded-lg bg-slate-100 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-700 lg:block">UserCreationError</button>
+  <nav class="flex items-center justify-between gap-x-1.5 p-2 border-b border-neutral-100">
+    <h4 class="font-black">ReportErr</h4>
+    <button class="hidden px-2 whitespace-nowrap rounded-lg border-2 border-slate-950 text-xs font-semibold leading-6 text-slate-950 lg:block">All errors</button>
   </nav>
-  <div class="px-3 py-1">
+  <div>
     <div class="text-sm">
       <table class="w-full">
         <thead>
-          <tr class="text-left border-b border-neutral-100">
-            <th class="w-1/4">Error</th>
-            <th class="w-1/4">Model</th>
-            <th class="w-1/4">Context</th>
-            <th class="w-1/4">Severity</th>
+          <tr class="h-8 [&>th]:px-2 text-left border-y border-neutral-300 bg-stone-200">
+            <th class="w-6"></th>
+            <th class="w-24">ID</th>
+            <th class="w-24">Severity</th>
+            <th>Error</th>
+            <th>Model</th>
+            <th>Context</th>
           </tr>
         </thead>
         <tbody>
-          <% 10.times do |i| %>
+          <% @errors.each do |e| %>
             <tr>
-              <%= render 'reporterr/errors/shared/table_row', index: i %>
+              <%= render 'reporterr/errors/shared/table_row', error: e %>
             </tr>
           <% end %>
         </tbody>

@@ -1,5 +1,5 @@
 require 'reporterr'
 
 module Reporterr 
-  @error_models = []
+  @error_models = ['UserCreationError']
 end

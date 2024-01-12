@@ -1,11 +1,12 @@
-<tr class="w-full border-b border-neutral-200
-            <%= index.odd? ? 'bg-slate-100' : 'bg-transparent'  %>
-            cursor-pointer hover:bg-slate-100">
-  <td class="w-1/4 py-2 font-semibold">StandardError</td>
-  <td class="w-1/4">UserCreationError</td>
-  <td class="w-1/4">"{ user_id: 3 }"</td>
-  <td class="w-1/4">
-    <button class="hidden whitespace-nowrap rounded-lg bg-slate-200 px-2 text-xs font-semibold leading-6 text-slate-700 lg:block">low</button>
+<tr class="w-full h-9 [&>td]:px-2 text-neutral-500 border-b border-neutral-200 cursor-pointer hover:bg-neutral-100">
+  <td class="border-r border-neutral-200">
+    <input type="checkbox" class="form-checkbox h-4 w-4 text-slate-600 transition duration-150 ease-in-out rounded" />
   </td>
-
+  <td class="border-r border-neutral-200"><%= error.id %></td>
+  <td class="border-r border-neutral-200">
+    <p class="hidden whitespace-nowrap inline-block rounded-md bg-slate-200 px-2 text-xs font-semibold leading-6 text-slate-700 lg:block"><%= error.severity %></p>
+  </td>
+  <td class="font-black text-black border-r border-neutral-200"><%= error.error %></td>
+  <td class="border-r border-neutral-200"><%= error.class %></td>
+  <td class="border-r border-neutral-200"><%= error.context %></td>
 </tr>
