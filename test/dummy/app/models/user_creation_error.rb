@@ -1,0 +1,3 @@
+class UserCreationError < ApplicationRecord
+
+end
