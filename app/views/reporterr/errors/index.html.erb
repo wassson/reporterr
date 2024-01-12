@@ -1,2 +1,28 @@
-<h1 class="text-red-900">Errors#index</h1>
-<p>Find me in app/views/reporterr/errors/index.html.erb</p>
+<div class="w-screen h-screen font-lato">
+  <nav class="flex items-center gap-x-1.5 p-2 border-b border-neutral-100">
+    <button class="hidden whitespace-nowrap rounded-lg bg-slate-900 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-200 lg:block">All errors</button>
+    <button class="hidden whitespace-nowrap rounded-lg bg-slate-100 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-700 lg:block">BaseError</button>
+    <button class="hidden whitespace-nowrap rounded-lg bg-slate-100 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-700 lg:block">UserCreationError</button>
+  </nav>
+  <div class="px-3 py-1">
+    <div class="text-sm">
+      <table class="w-full">
+        <thead>
+          <tr class="text-left border-b border-neutral-100">
+            <th class="w-1/4">Error</th>
+            <th class="w-1/4">Model</th>
+            <th class="w-1/4">Context</th>
+            <th class="w-1/4">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% 10.times do |i| %>
+            <tr>
+              <%= render 'reporterr/errors/shared/table_row', index: i %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
