@@ -1,0 +1,3 @@
+class ReportedError < ApplicationRecord
+
+end

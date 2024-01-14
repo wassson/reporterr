@@ -1,8 +1,14 @@
 module Reporterr
   class ErrorsController < ApplicationController
+    include ErrorsHelper
+
     def index
-      error_models = Reporterr.error_models
-      @errors = error_models.empty? ? [] : error_models.first.constantize.first(10)
+      # TODO: Add filtering
+      @errors = params[:filter] ? [] : ReportedError.all
+      # raise 'Error without handler'
+      # Rails.error.handle do
+      #   raise 'Error with handler'
+      # end
     end
   end
 end

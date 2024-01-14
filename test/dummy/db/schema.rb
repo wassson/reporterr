@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_12_232030) do
-  create_table "user_creation_errors", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2024_01_13_221431) do
+  create_table "reported_errors", force: :cascade do |t|
     t.text "error"
     t.string "severity"
     t.json "context"
